@@ -3,7 +3,6 @@ struct ListNode* mergeTwoLists(struct ListNode* list1, struct ListNode* list2) {
     struct ListNode* tail = &dummy;
     dummy.next = NULL;
 
-    // Merge the lists by comparing values of nodes
     while (list1 && list2) {
         if (list1->val <= list2->val) {
             tail->next = list1;
@@ -15,10 +14,8 @@ struct ListNode* mergeTwoLists(struct ListNode* list1, struct ListNode* list2) {
         tail = tail->next;
     }
 
-    // Append remaining nodes from either list
     tail->next = (list1 != NULL) ? list1 : list2;
 
-    // Return the head of the merged list
     return dummy.next;
     
 }
